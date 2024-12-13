@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Siker!</title>
+    <link rel="stylesheet" href="ValaszCSS.css">
+	<link rel="icon" href="Pizzalogo.png">
+</head>
+<body id="body">
+    <div class="container-cimek">
+        <h1 class="cim">Sikeres Submit</h1>
+        <h2 class="cim">Ha nem hiszed el kattints a gombra:</h2>
+        <button id="addElement" style="align-self: center;">Ide kattints</button>
+    </div>
+        
+    <div id="container"></div>
+
+    <script>
+        document.getElementById('addElement').addEventListener('click', function() {
+            // Új elem létrehozása
+            const newElement = document.createElement('div');
+            newElement.innerHTML = '<p class="container">Bizz az oldalban, és hidd el, hogy sikeres</p>';
+            
+            // Az új elemet hozzáadjuk a konténerhez
+            document.getElementById('container').appendChild(newElement);
+
+            // Cimeket átszinezzük
+            const cimElements = document.getElementsByClassName('cim');
+            for (let i = 0; i < cimElements.length; i++) {
+                cimElements[i].style.color = "red";
+            }
+
+            document.getElementById('body').style.background = "black";
+            document.getElementById('addElement').style.color = "red";
+        });
+    </script>
+
+</body>

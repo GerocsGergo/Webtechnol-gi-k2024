@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Étlap</title>
+    <link rel="stylesheet" href="EtlapCSS.css">
+	<link rel="icon" href="Pizzalogo.png">
+
+    <!-- Style használata -->
+	<style>
+        .etterem-nev {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 10px;
+			
+        }
+    </style>
+</head>
+<body>
+
+	<!-- Felső logo -->
+	<div class="gomb-containerUpper">
+        <div class="logo-container" id="logo-container-top">
+            <img src="Pizzalogo.png" alt="Pizza Logo" class="pizzalogo" id="pizzalogo-top">
+        </div>
+    </div>
+
+	<h1 class="etterem-nev"><i>Józsika's Étterem és Pizzéria</i></h1>
+
+    <div class="gomb-container">
+        <!-- Felső menüsor -->
+                <a href="Fooldal.html" class="menu_gomb">Főoldal</a>
+                <a href="Rolunk.html" class="menu_gomb">Rólunk</a>
+                <a href="Kapcsolat.html" class="menu_gomb">Kapcsolat</a>
+        </div>
+
+    <!-- Étlap táblázat -->
+    <div class="etlap-container">
+        <table>
+            <tr>
+                <th>Étel Kép</th>
+                <th>Étel Megnevezés</th>
+                <th>Egészséges?</th>
+                <th>Ár</th>
+            </tr>
+            <tr>
+                <td><img src="marg.png" alt="Margherita" class="etlap-kep"></td>
+                <td>Margherita Pizza (Paradicsomos alap, sajt)</td>
+                <td><img src="emoji.png" alt="ZoldEmoji" class="etlap-kep"></td>
+                <td>2500 Ft</td>
+            </tr>
+            <tr>
+                <td><img src="salami.png" alt="Szalami" class="etlap-kep"></td>
+                <td>Szalámis Pizza (Paradicsomos alap, sajt, szalámi)</td>
+                <td><img src="emoji.png" alt="ZoldEmoji" class="etlap-kep"></td>
+                <td>2850 Ft</td>
+            </tr>
+            <tr>
+                <td><img src="salcorn.png" alt="SzalamiKukorica" class="etlap-kep"></td>
+                <td>Szalámis Kukoricás Pizza (Paradicsomos alap, sajt, szalámi, kukorica)</td>
+                <td><img src="emoji.png" alt="ZoldEmoji" class="etlap-kep"></td>
+                <td>3000 Ft</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Vissza a Főoldalra gomb (alul) -->
+    <div class="gomb-containerBottom">
+    <!-- Bal oldali logó -->
+		<div class="logo-container logo-container-left">
+			<img src="Pizzalogo.png" alt="Pizza Logo" class="pizzalogo2" id="pizzalogo-left">
+		</div>
+
+    <!-- Gombok középen -->
+		<div class="gomb-sor">
+			<a href="Fooldal.html" id="vissza-fooldal-gomb">Vissza a Főoldalra</a>
+			<a href="Rolunk.html" class="fooldal-gomb">Rólunk</a>
+			<a href="Kapcsolat.html" class="fooldal-gomb">Kapcsolat</a>
+		</div>
+
+    <!-- Jobb oldali logó -->
+		<div class="logo-container logo-container-right">
+			<img src="Pizzalogo.png" alt="Pizza Logo" class="pizzalogo2" id="pizzalogo-right">
+		</div>
+	</div>
+
+
+    <script>
+       // const logoTop = document.getElementById('pizzalogo-top');
+        const logoBottom = document.getElementById('pizzalogo-bottom');
+        const buttons = document.querySelectorAll('.fooldal-gomb');
+
+        buttons.forEach(button => {
+            button.addEventListener('mouseover', () => {
+                if (button === buttons[1]) {
+                    logoBottom.style.animationPlayState = 'running'; // Animáció indítása a alsó gombnál
+                }
+            });
+
+            button.addEventListener('mouseout', () => {
+                if (button === buttons[1]) {
+                    logoBottom.style.animationPlayState = 'paused'; // Animáció megállítása a alsó gombnál
+                }
+            });
+        });
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".fooldal-gomb[href='Rolunk.html']").on("click", function (event) {
+                event.preventDefault();
+                $(this)
+                    .animate({ width: "300px", backgroundColor: "#f4540f" }, 500)
+                    .animate({ width: "150px", backgroundColor: "#f4cd0f" }, 500);
+                alert("A Rólunk oldal betöltődik hamarosan...");
+                setTimeout(() => {
+                    window.location.href = "Rolunk.html";
+                }, 1500);
+            });
+        });
+    </script>
+
+</body>
+</html>

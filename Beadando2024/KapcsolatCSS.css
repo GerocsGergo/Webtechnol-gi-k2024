@@ -1,0 +1,95 @@
+/* Oldal háttér színezése */
+body {
+    background-color: #f4540f;
+	margin: 0;
+}
+
+/*ID szerinti formázás*/
+
+#etterem-nev{
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+/*Menü gombok*/
+.gomb-container {
+	
+	display: flex;                
+    width: 100%; 
+}
+
+.menu_gomb:hover {
+    background-color: #edf175;
+}
+
+/* Gombok formázása */
+.menu_gomb {
+	flex: 1;
+    display: inline-block;     
+    padding: 10px;
+    background-color: #f4cd0f;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    border: solid;
+    cursor: pointer;
+    position: relative;     
+    z-index: 1;                
+    box-sizing: border-box;
+	margin-bottom: 20px;	
+}
+
+/*Formok*/
+.form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px; 
+    background-color: #f4cd0f;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px black; /* Árnyék */
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input{
+    margin-bottom: 10px;
+}
+
+.invalid {
+    border: 2px solid red;
+    background-color: #ffe6e6;
+}
+
+.valid {
+    border: 2px solid green;
+    background-color: #ffffff;
+}
+
+/* Animációs beállítás a pizzalogo számára */
+.pizzalogo {
+    width: 50px; /* Állítsd be a kívánt szélességet */
+    display: inline-block; /* Az inline-blokk beállítás a helyes pozicionáláshoz */
+    animation: move 5s ease-in-out infinite; /* Új animáció létrehozása */
+    animation-play-state: running; /* Alapértelmezett állapot megállítása */
+    position: relative; /* A pozicionálás szükséges a balról jobbra mozgáshoz */
+	margin-bottom: 10px;
+}
+
+
+/*Animáció*/
+@keyframes move {
+    0% {
+        left: 0; /* Kezdő pozíció balra */
+    }
+    50% {
+        left: calc(100vw - 50px); /* Jobbra mozog a képernyő széléig (50px a logo szélessége) */
+    }
+    100% {
+        left: 0; /* Visszatér balra */
+    }
+}

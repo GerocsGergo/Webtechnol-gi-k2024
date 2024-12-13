@@ -1,0 +1,99 @@
+
+/* Oldal háttér színezése */
+body {
+    background-color: #f4540f;
+	margin: 0;
+}
+
+
+.menu_gomb:hover {
+    background-color: #edf175;
+}
+
+/*Menü gombok*/
+.gomb-container {
+	
+	display: flex;                
+    width: 100%; 
+}
+
+/* Gombok formázása */
+.menu_gomb {
+	flex: 1;
+    display: inline-block;     
+    padding: 10px;
+    background-color: #f4cd0f;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    border: solid;
+    cursor: pointer;
+    position: relative;     
+    z-index: 1;                
+    box-sizing: border-box;
+	margin-bottom: 20px;	
+}
+
+/*Táblázat*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border:  solid black;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+    font-size: 18pt;
+}
+th{
+	background-color: #f4cd0f;
+	text-align: center;
+}
+td{
+	background-color: #edf175;
+
+}
+
+/*Hasábok*/
+.hasab-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /* Három oszlop egyenlő szélességgel */
+            gap: 20px; /* Hézag az oszlopok között */
+        }
+
+.column {
+            background-color: #f4540f;
+            padding: 20px;
+            margin: 10px;
+}
+
+
+/* Animációs beállítás a pizzalogo számára */
+.pizzalogo {
+    width: 50px; /* Állítsd be a kívánt szélességet */
+    display: inline-block; /* Az inline-blokk beállítás a helyes pozicionáláshoz */
+    animation: move 5s ease-in-out infinite; /* Új animáció létrehozása */
+    animation-play-state: running; /* Alapértelmezett állapot megállítása */
+    position: relative; /* A pozicionálás szükséges a balról jobbra mozgáshoz */
+	margin-bottom: 10px;
+}
+
+
+/*Animáció*/
+@keyframes move {
+    0% {
+        left: 0; /* Kezdő pozíció balra */
+    }
+    50% {
+        left: calc(100vw - 50px); /* Jobbra mozog a képernyő széléig (50px a logo szélessége) */
+    }
+    100% {
+        left: 0; /* Visszatér balra */
+    }
+}

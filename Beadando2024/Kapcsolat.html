@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Kapcsolat</title>
+    <link rel="stylesheet" href="KapcsolatCSS.css">
+	<link rel="icon" href="Pizzalogo.png">
+
+</head>
+
+<body>
+	
+	<!-- Felső logo -->
+	<div class="gomb-containerUpper">
+        <div class="logo-container" id="logo-container-top">
+            <img src="Pizzalogo.png" alt="Pizza Logo" class="pizzalogo" id="pizzalogo-top">
+        </div>
+    </div>
+
+	<h1 id="etterem-nev"><i>Józsika's Étterem és Pizzéria</i></h1>
+		
+	
+
+    <div class="gomb-container">
+    <!-- Felső menüsor -->
+			<a href="Etlap.html" class="menu_gomb">Étlap</a>
+			<a href="Fooldal.html" class="menu_gomb">Főoldal</a>
+			<a href="Rolunk.html" class="menu_gomb">Rólunk</a>
+	</div>
+
+    <h2 style="font-size: 20px; text-align: center; margin-bottom: 10px;" >Vegye fel velünk a kapcsolatot telefonon(06306996969), vagy üzenetben!</h2>
+
+
+    <form class="form-container" id="form-container" action="Valasz.html" method="get">
+        <!--Beviteli mezők-->
+        <label for="fname">Vezetéknév:</label><br>
+        <input type="text" id="fname" name="fname" required><br>
+        <label for="lname">Keresztnév:</label><br>
+        <input type="text" id="lname" name="lname" required><br>
+
+        <label for="email">E-mail:</label><br>
+        <input type="email" id="email" name="email" required><br>
+
+        <!--Beviteli mezők, többsoros-->
+        <label for="msg">Üzenet</label><br>
+        <textarea type="text" id="msg" name="msg" rows="4" required></textarea><br>
+
+        <!--Radio gomb-->
+        <label for="targy">Tárgy:</label><br>
+        <input type="radio" id="panasz" name="radio" value="1">
+        <label for="panasz">Panasz</label><br>
+        <input type="radio" id="erdeklodes" name="radio" value="2">
+        <label for="erdeklodes">Érdeklődés</label><br>
+        <input type="radio" id="egyeb" name="radio" value="3">
+        <label for="egyeb">Egyéb</label><br>
+
+        <!--Check box-->
+        <label for="ferfi"> Nav-nál dolgozik?(Ha nem, akkor hagyja üresen!):</label><br>
+        <input type="checkbox" id="nav" name="nav" value="ejha"><br>
+       
+        <!--Dátum választó-->
+        <label for="date">Születési dátum:</label><br>
+        <input type="date" id="date" name="date" required><br>
+
+         <!--Szín választó-->
+        <label for="color">Válassz egy színt:</label>
+        <input type="color" id="color" name="color" value="#000000" required>
+
+        <input type="submit" value="Submit"><br>
+    </form>
+
+    <script>
+        document.getElementById('color').addEventListener('input', function() {
+            const selectedColor = this.value;
+            document.getElementById('form-container').style.backgroundColor = selectedColor; // Háttérszín frissítése
+        });
+    </script>
+    
+
+    <script>
+        // Az űrlap validálása
+        const form = document.getElementById('form-container');
+        const inputs = form.querySelectorAll('input, textarea');
+    
+        form.addEventListener('submit', function (event) {
+            let formIsValid = true;
+    
+            inputs.forEach(input => {
+                if (!input.checkValidity()) {
+                    input.classList.add('invalid');
+                    input.classList.remove('valid');
+                    formIsValid = false;
+                } else {
+                    input.classList.remove('invalid');
+                    input.classList.add('valid');
+                }
+            });
+    
+            if (!formIsValid) {
+                event.preventDefault(); // Ha nem megfelelő, az űrlap ne legyen beküldve
+            }
+        });
+    
+        // Valós idejű mező validálás
+        inputs.forEach(input => {
+            input.addEventListener('input', function () {
+                if (input.checkValidity()) {
+                    input.classList.remove('invalid');
+                    input.classList.add('valid');
+                } else {
+                    input.classList.add('invalid');
+                    input.classList.remove('valid');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

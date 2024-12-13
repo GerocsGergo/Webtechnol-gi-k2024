@@ -1,0 +1,14 @@
+/* Oldal háttér színezése */
+body {
+    background-color: #f4540f;
+	margin: 0;
+}
+
+.container-cimek{
+    text-align: center;;
+}
+
+.container{
+    text-align: center;
+    color: red;
+}

@@ -1,0 +1,180 @@
+
+/*Alsó Gombok formázása */
+.fooldal-gomb {
+    display: block;
+    width: 98%;
+    padding: 10px;
+    background-color: #f4cd0f;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin-bottom: 20px;
+    border: solid;
+    cursor: pointer;
+    position: relative;
+    z-index: 1; 
+}
+
+.fooldal-gomb:hover {
+    background-color: #edf175;
+}
+
+.menu_gomb:hover {
+    background-color: #edf175;
+}
+
+/*Menü gombok*/
+.gomb-container {
+	
+	display: flex;                
+    width: 100%; 
+}
+
+/* Gombok formázása */
+.menu_gomb {
+	flex: 1;
+    display: inline-block;     
+    padding: 10px;
+    background-color: #f4cd0f;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    border: solid;
+    cursor: pointer;
+    position: relative;     
+    z-index: 1;                
+    box-sizing: border-box;
+	margin-bottom: 20px;	
+}
+
+/* Táblázat stílusa */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border:  solid black;
+}
+
+th, td {
+    padding: 5px;
+    text-align: center;
+    font-size: 18pt;
+}
+
+
+/* A képek szélessége és magassága */
+.etlap-kep {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;   /* A kép kitölti a cellát, megtartva az arányokat */
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Minden páros sor szine más */
+tr:nth-child(3) {
+    background-color: #edf175;
+}
+tr:nth-child(2),tr:nth-child(4) {
+    background-color: #f4cd0f;
+}
+
+
+/* Táblázat fejlécek színezése */
+th {
+    background-color: #f4cd0f;
+    font-weight: bold;
+}
+
+/* Oldal háttér színezése */
+body {
+    background-color: #f4540f;
+}
+
+.gomb-container2 {
+    padding: 10px;              
+}
+
+/* A teljes gomb-container beállítása flexboxra */
+.gomb-containerBottom {
+    display: flex;             
+    justify-content: space-between;
+    align-items: center;      
+    padding: 10px;              
+}
+
+/* A logókat balra és jobbra helyezzük */
+.logo-container {
+    justify-self: flex-start;  /* Bal oldalon helyezkedik el */
+	width: 50px;
+}
+
+.logo-container2 {
+    justify-self: flex-end;    /* Jobb oldalon helyezkedik el */
+	width: 50px;
+}
+
+/* Animációs beállítás a pizzalogo számára */
+.pizzalogo {
+    width: 50px;
+    display: inline-block; 
+    animation: move 5s ease-in-out infinite; 
+    animation-play-state: running; 
+    position: relative;
+}
+
+.pizzalogo2 {
+    width: 50px;
+    display: inline-block;
+    animation: spin 2s linear infinite;
+    animation-play-state: running;
+}
+
+/* Alsó Főoldal gomb formázása */
+#vissza-fooldal-gomb {
+    display: block;
+    width: 98%;
+    padding: 10px;
+    background-color: #f4cd0f;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin-bottom: 20px;
+    border: solid;
+    cursor: pointer;
+    position: relative;
+    z-index: 1; 
+}
+
+#vissza-fooldal-gomb:hover {
+    background-color: #edf175;
+}
+
+/* Animáció definíció */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes move {
+    0% {
+        left: 0;
+    }
+    50% {
+        left: calc(100vw - 50px); /* Jobbra mozog a képernyő széléig (50px a logo szélessége) */
+    }
+    100% {
+        left: 0;
+    }
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Főoldal</title>
+    <link rel="stylesheet" href="FooldalCSS.css">
+	<link rel="icon" href="Pizzalogo.png">
+	
+	<!-- Style használata -->
+	<style>
+        .etterem-nev {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 10px;
+			
+        }
+		
+		.hasab-cim{
+			  text-align: center;
+		}
+    </style>
+</head>
+<body>
+	
+	<!-- Felső logo -->
+	<div class="gomb-containerUpper">
+        <div class="logo-container" id="logo-container-top">
+            <img src="Pizzalogo.png" alt="Pizza Logo" class="pizzalogo" id="pizzalogo-top">
+        </div>
+    </div>
+
+	<h1 class="etterem-nev"><i>Józsika's Étterem és Pizzéria</i></h1>
+		
+	
+
+    <div class="gomb-container">
+    <!-- Felső menüsor -->
+			<a href="Etlap.html" class="menu_gomb">Étlap</a>
+			<a href="Rolunk.html" class="menu_gomb">Rólunk</a>
+			<a href="Kapcsolat.html" class="menu_gomb">Kapcsolat</a>
+	</div>
+	
+	<div class="fooldal-container">
+        <table>
+            <tr>
+                <th><h2>41. Hét</h2></th>
+                <th><h2>Leves <span style="color: white">A</span> Menü</h2></th>
+				<th><h2>Leves <span style="color: white">B</span> Menü</h2></th>
+                <th><h2>Főétel <span style="color: white">A</span> Menü</h2></th>			
+				<th><h2>Főétel <span style="color: white">B</span> Menü</h2></th>
+ 
+            </tr>
+            <tr>
+                <td>
+					<select class="dropdownmenu" id="dropdownMenu">
+						<option value="0">Hétfő</option>
+						<option value="1">Kedd</option>
+						<option value="2">Szerda</option>
+						<option value="3">Csütörtök</option>
+						<option value="4">Péntek</option>
+						<option value="5">Válassz egy napot!</option>
+					</select>
+				</td>
+                <td id="levesA">Válassz egy napot!</td>
+                <td id="levesB">Válassz egy napot!</td>
+				<td id="foA">Válassz egy napot!</td>
+                <td id="foB">Válassz egy napot!</td>
+
+            </tr>
+        </table>
+    </div>
+
+	<script>
+		const dropdown = document.getElementById('dropdownMenu');
+		
+		function nap(levesA,levesB,foA,foB){
+			this.levesA = levesA;
+			this.levesB = levesB;
+			this.foA = foA;
+			this.foB = foB;
+		}
+		const hetfo = new nap("Bableves","Húsleves","Csirke Pörkölt","Bolognai Sphagetti");
+		const kedd = new nap("Zöldborsó leves","Ventilátor leves","Birka Pörkölt","Rántott hús");
+		const szerda = new nap("Spárga leves","Húsleves","Disznó Pörkölt","Rántott Sphagetti");
+		const csutortok = new nap("Vaj leves","Informatikus leves","Marha Pörkölt","Rántott hurka");
+		const pentek = new nap("Szalámis leves","Húsleves","informatikus Pörkölt","Kolbász");
+		
+		const hetiMenu = [hetfo,kedd,szerda,csutortok,pentek];
+		
+		const levesA = document.getElementById('levesA');
+        const levesB = document.getElementById('levesB');
+        const foA = document.getElementById('foA');
+        const foB = document.getElementById('foB');
+		
+		
+		dropdown.addEventListener('change', function() {
+            // A kiválasztott index alapján frissítjük a táblázatot
+            const selectedNap = dropdownMenu.value;
+            const selectedMenu = hetiMenu[selectedNap];
+
+            // Frissítjük a táblázat tartalmát
+            levesA.textContent = selectedMenu.levesA;
+            levesB.textContent = selectedMenu.levesB;
+            foA.textContent = selectedMenu.foA;
+            foB.textContent = selectedMenu.foB;
+        });
+		dropdown.value = "5";
+		dropdown.dispatchEvent(new Event('change'));  // Táblázat frissítése
+	
+	</script>
+	
+	
+	 <div class="hasab-container">
+        <div class="column">
+            <h2 class="hasab-cim">Legjobbra értékelt ételeink</h2>
+            <p>
+				<ol>
+					<li>Szalámis Pizza</li>
+					<li>Informatikus leves</li>
+					<li>Szalámis leves</li>
+				</ol>
+			</p>
+        </div>
+        <div class="column">
+            <h2 class="hasab-cim">Rendelés menete</h2>
+            <p style="text-align: center">
+			A <b style="color: white">06306996969</b> telefonszámon várják kollégáink a hivását, ezen a számon lehetséges a rendelés leadása, továbbá a <b>jozsikasetteremespizzeria@gmail.com</b> email címen.
+
+			</p>
+        </div>
+        <div class="column">
+            <h2 class="hasab-cim">Szolgáltatásaink</h2>
+            <p>
+				<ul>
+					<li>Ingyenes Wi-fi</li>
+					<li>Gyors kiszállítás(maximum 2 év)</li>
+					<li>Elviselhető kiszolgálás</li>
+					<li>Nagyon finom ételek</li>
+					<li>"Természetes" alapanyagból készült ételek</li>
+				</ul>
+			</p>
+        </div>
+    </div>
+
+</body>
+</html>
